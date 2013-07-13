@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>FooTable - jQuery plugin for responsive HTML tables</title>
+  <meta name="viewport" content = "width = device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 1.0, user-scalable = no" />
+  
+  <link href="css/footable-0.1.css" rel="stylesheet" type="text/css" />
+  <link href="../css/footable.editable-1.0.css" rel="stylesheet" type="text/css" />
+  
+  <script src="js/data-generator.js" type="text/javascript"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+  <script src="js/footable.js" type="text/javascript"></script>
+  <script src="../js/footable.editable.js" type="text/javascript"></script>
+  
+  <script type="text/javascript">
+    $(function() {
+      $('table').footable();
+    });
+  </script>
+</head>
+  <body>
+    <table class="footable">
+      <thead>
+        <tr>
+          <th class="fooId fooEditable" data-class="expand">
+            First Name
+          </th>
+          <th class="fooEditable">
+            Last Name
+          </th>
+          <th class="fooEditable" data-hide="phone,tablet">
+            Job Title
+          </th>
+          <th class="fooEditable" data-hide="phone,tablet">
+            DOB
+          </th>
+          <th class="fooEditable" data-hide="phone">
+            Status
+          </th>
+		  <!--data-ft-buttons is used to create add and/or delete buttons for each record-->
+		  <th data-ft-buttons="Add,Delete" data-hide="phone, tablet"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <script type="text/javascript">
+          window.generateRows(20);
+		</script>
+		<tr class="fooNewRecord">
+		  <td>First</td>
+		  <td>Last</td>
+		  <td>Title</td>
+		  <td>DOB</td>
+		  <td>Active</td>
+		</tr>
+      </tbody>
+    </table>
+    
+  </body>
+</html>

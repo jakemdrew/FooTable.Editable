@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>FooTable - jQuery plugin for responsive HTML tables</title>
+  <meta name="viewport" content = "width = device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 1.0, user-scalable = no" />
+  
+  <link href="css/footable-0.1.css" rel="stylesheet" type="text/css" />
+  <link href="../css/footable.editable-1.0.css" rel="stylesheet" type="text/css" />
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+  <script src="js/footable.js" type="text/javascript"></script>
+  <script src="../js/footable.editable.js" type="text/javascript"></script>
+  
+  <script type="text/javascript">
+    $(function() {
+      $('table').footable();
+		
+		//Demo to mimic sending data from a server to footable in response to a command sent by the client.
+		
+		//Data records from your server
+		var dataRecords = new Array();
+		
+		var dataRecord1 = {};
+		dataRecord1.FirstName = "Isidra";
+		dataRecord1.LastName = "Boudreaux";
+		dataRecord1.JobTitle = "Traffic Court Referee";
+		//a custom parser is used to format display the data for this field. See data-return-type="JSONDate"
+		dataRecord1.DOB = new Date(1983,10,30);  //'/Date(78025368997)/'; - works too when data-return-type="JSONDate"
+		dataRecord1.Status = true;  //This data is save
+		
+		var dataRecord2 = {};
+		dataRecord2.FirstName = "Billy";
+		dataRecord2.LastName = "Boudreaux";
+		dataRecord2.JobTitle = "Judge";
+		dataRecord2.DOB = new Date(1999,10,30);  //'/Date(78025368997)/'; - works too when data-return-type="JSONDate"
+		dataRecord2.Status = false;
+		
+		dataRecords.push(dataRecord1);
+		dataRecords.push(dataRecord2);
+		
+		//Use ftEditable API to delete all rows and add new data to our table.
+		//(this process happens automatically when a valid handler is provided 
+		//$('#table').footable({dataHandlerURL: 'www.myHandlerURL.com', serverTableName: 'myTableName'});
+		var ftEditable = $().ftEditable();
+		ftEditable.deleteAllRows('#tblFootable');
+		ftEditable.addRows('#tblFootable',dataRecords);
+	});
+
+  </script>
+</head>
+  <body>
+    <table id="tblFootable" class="footable">
+      <thead>
+        <tr>
+          <th class="fooId fooEditable" data-class="expand">
+            First Name
+          </th>
+          <th class="fooEditable">
+            Last Name
+          </th>
+          <th class="fooEditable" data-hide="phone,tablet">
+            Job Title
+          </th>
+		  <!--notice below data-return-type accessing a custom parser to format the data from the server for display-->
+          <th class="fooEditable" data-hide="phone,tablet" data-return-type="prettyDate"> 
+            DOB
+          </th>
+          <th class="fooEditable" data-hide="phone" data-ft-control="checkbox">
+            Active
+          </th>
+		  <th data-ft-buttons="Add,Delete" data-hide="phone, tablet"></th>
+        </tr>
+      </thead>
+		<tbody>
+		<tr class="fooNewRecord">
+			  <td>First</td>
+			  <td>Last</td>
+			  <td>Title</td>
+			  <td>DOB</td>
+			  <td>
+				<input type="checkbox"/>
+			  </td>
+			</tr>
+	  </tbody>	  
+    </table>
+    
+  </body>
+</html>
