@@ -59,8 +59,8 @@ FooTables are defined just like always, but can include a few new FooTable.Edita
           <th class="fooEditable" data-hide="phone,tablet">
             Job Title
           </th>
-          <!--data-return-type="JSONDate" is used to apply a custom Parser to the value displayed in this field-->
-          <!--For instance a JSON formatted date /Date(1234....)/ would be displayed in dd/mm/yy format-->
+          <!--data-return-type="JSONDate" apply's a custom Parser to the value displayed-->
+          <!--A JSON formatted date /Date(1234....)/ would be displayed in dd/mm/yy format-->
           <th class="fooEditable" data-hide="phone,tablet" data-return-type="JSONDate">
             DOB
           </th>
