@@ -34,6 +34,7 @@ Index
 1. Place a referece to footable.editable.js under footable.js. 
 2. Place a referece to footable.editable-1.0.css under footable-0.1.css.
 
+FooTables are defined just like always, but can include a few new FooTable.Editable classes and data attributes: 
 ```html
    <table id="tblFootable" class="footable">
       <thead>
@@ -69,12 +70,27 @@ Index
         <!--class="fooNewRecord" defines a blank row for new records at the end of the table-->
         <tr class="fooNewRecord">
           <td></td>
-	  <td>First</td>
-	  <td>Last</td>
-	  <td>Title</td>
-	  <td>DOB</td>
-	  <td>Active</td>
+          <td>First</td>
+          <td>Last</td>
+          <td>Title</td>
+          <td>DOB</td>
+          <td>Active</td>
         <tr>
       </tbody>
     </table>
 ```
+
+The FooTable.Editable plugin also includes a few new startup options:
+```javascript
+    $(function () {
+        $('#tblFootable').footable({
+            serverTableName: "Employees",             
+            dataHandlerURL: "/FooTableHandler.ashx",   
+            autoLoad: true                                                          
+        });                                                 
+    });                                                 
+```
+
+* <strong>serverTableName</strong> - The name of the server table you wish to update.
+* <strong>dataHandlerURL</strong> - The URL for the generic handler processing requests.
+* <strong>autoLoad</strong> - Sends a "Load" request to the server each time the footable is created.  The "Load" request fills up the table with data from the server. 
