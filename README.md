@@ -22,6 +22,7 @@ Index
 * The dataHandlerURL can also respond back to the client with "Success", "Error", "Load", or "Update" including any JSON data or messages for the client.
 * A special fooId class can be added to any th tag to ensure that Primary and Composite key fields are sent to the server with every transaction.  These fooId fields can also be hidden using other standard footable data attributes.
 * The data attribute (data-ft-buttons="Add,Delete") can be used to include "add" and / or "delete" buttons on each table row.
+* Finally, an ftEditable API is included to expose many of the internal functions included within the FooTable.Editable plugin providing advanced users with greater flexibility.  
 
 
 <h2 id="QuickStart">Quick Start</h2>
