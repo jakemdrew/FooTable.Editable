@@ -7,7 +7,7 @@ This code is an ALPHA level release.  Please help us work out the bugs and use a
 * FooTable.Editable requires <a href="http://jquery.com/">jQuery</a> 
 * Footable.Editable requires <a href="https://github.com/bradvin/FooTable">Footable</a> 
 
-	
+![FooTable.Editable](https://raw.github.com/jakemdrew/FooTable.Editable/master/screenshot.jpg "FooTable")	
 
 Index
 -----
@@ -15,6 +15,7 @@ Index
 * [How Does It Work?](#HowDoesItWork)
 * [Quick Start](#QuickStart)
 * [ftEditable API](#ftEditableAPI)
+* [ftEditable API functions](#ftEditableAPIfunctions)
 
 
 <h2 id="HowDoesItWork">How Does It Work?</h2>
@@ -101,5 +102,31 @@ The FooTable.Editable plugin also includes a few new startup options:
 
 <h2 id="#ftEditableAPI">ftEditable API</h2>
 
+The ftEditable API can be used for more advanced FooTable.Editable transactions and table manipulations.  All API functions can be accessed through the jQuery ftEditable function which returns the ftEditable object.  The following example demonstrates using the ftEditable function to delete all rows from a footable and add any new rows contained in a javascript Array of dataRecords.  
 
+```javascript
+    var ftEditable = $().ftEditable();
+    ftEditable.deleteAllRows('#tblFootable');
+    ftEditable.addRows('#tblFootable',dataRecords);
+```
+
+Using the ftEditable object, a "Load" request is sent to the sever.  If the request is successful, the server responds back with an array of JSON records containing data which is then loaded into the FooTable.  This is the exact same command issued when the autoLoad: option is set to true.
+
+```javascript
+    var ftEditable = $().ftEditable();
+    ftEditable.processCommand('#tblFootable', 'Load');
+```
+
+<h2 id="#ftEditableAPIfunctions">ftEditable API Functions</h2>
+
+This section is still under construction.  Additional details to follow!
+
+* <strong>processCommand(target, command)</strong>
+* <strong>transportData(target, updateRecord)</strong>
+* <strong>processServerResponse(target, data, updateRecord)</strong>
+* <strong>updateRow(row, rowData)</strong>
+* <strong>deleteRow(row)</strong>
+* <strong>deleteAllRows(table)</strong>
+* <strong>checkNewEmptyRecord(table)</strong>
+* <strong>addRows(table, tableRows)</strong>
 
