@@ -1,5 +1,7 @@
-FooTable.Editable
-=================
+FooTable.Editable (ALPHA RELEASE!)
+==================================
+
+This code is an ALPHA level release.  Please help us work out the bugs and use at your own risk :)
 
 * FooTable.Editable is a jQuery plugin for FooTable that makes all of your FooTables editable.
 * FooTable.Editable requires <a href="http://jquery.com/">jQuery</a> 
