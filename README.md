@@ -119,12 +119,14 @@ Using the ftEditable object, a "Load" request is sent to the sever.  If the requ
 
 <h2 id="#ftEditableAPIfunctions">ftEditable API Functions</h2>
 
-<strong>processCommand(target, command)</strong>
-<strong>transportData(target, updateRecord)</strong>
-<strong>processServerResponse(target, data, updateRecord)</strong>
-<strong>updateRow(row, rowData)</strong>
-<strong>deleteRow(row)</strong>
-<strong>deleteAllRows(table)</strong>
-<strong>checkNewEmptyRecord(table)</strong>
-<strong>addRows(table, tableRows)</strong>
+This section is still under construction.  Additional details to follow!
+
+* <strong>processCommand(target, command)</strong>
+* <strong>transportData(target, updateRecord)</strong>
+* <strong>processServerResponse(target, data, updateRecord)</strong>
+* <strong>updateRow(row, rowData)</strong>
+* <strong>deleteRow(row)</strong>
+* <strong>deleteAllRows(table)</strong>
+* <strong>checkNewEmptyRecord(table)</strong>
+* <strong>addRows(table, tableRows)</strong>
 
