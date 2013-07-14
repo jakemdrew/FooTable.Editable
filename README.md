@@ -7,7 +7,7 @@ This code is an ALPHA level release.  Please help us work out the bugs and use a
 * FooTable.Editable requires <a href="http://jquery.com/">jQuery</a> 
 * Footable.Editable requires <a href="https://github.com/bradvin/FooTable">Footable</a> 
 
-	
+![FooTable.Editable](https://raw.github.com/jakemdrew/FooTable.Editable/master/screenshot.jpg "FooTable")	
 
 Index
 -----
