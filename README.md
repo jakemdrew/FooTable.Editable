@@ -25,6 +25,7 @@ Index
 * A special fooId class can be added to any th tag to ensure that Primary and Composite key fields are sent to the server with every transaction.  These fooId fields can also be hidden using other standard footable data attributes.
 * The data attribute (data-ft-buttons="Add,Delete") can be used to include "add" and / or "delete" buttons on each table row.
 * Users can create a blank row for new records by simply marking the blank row with the class "fooNewRecord".
+* Customer FooTable parsers can be applied to display values sent back from the server using the data-return-type= attribute.
 * Finally, an ftEditable API is included to expose many of the internal functions included within the FooTable.Editable plugin providing advanced users with greater flexibility.  
 
 
@@ -32,4 +33,48 @@ Index
 
 1. Place a referece to footable.editable.js under footable.js. 
 2. Place a referece to footable.editable-1.0.css under footable-0.1.css.
-3. 
+
+```html
+   <table id="tblFootable" class="footable">
+      <thead>
+        <tr>
+          <!--class="fooId" marks this row as the table's primary key-->
+          <!--Other Footable data attributes are used to hide the column from view-->
+          <th class="fooId" data-hide="all" data-ignore="true">
+            EmpId
+          </th>
+          <!--class="fooEditable" makes all the values in a column editable-->
+          <th class="fooEditable" data-class="expand">
+            First Name
+          </th>
+          <th class="fooEditable">
+            Last Name
+          </th>
+          <th class="fooEditable" data-hide="phone,tablet">
+            Job Title
+          </th>
+          <!--data-return-type="JSONDate" is used to apply a custom Parser to the value displayed in this field-->
+          <!--For instance a JSON formatted date /Date(1234....)/ would be displayed in dd/mm/yy format-->
+          <th class="fooEditable" data-hide="phone,tablet" data-return-type="JSONDate">
+            DOB
+          </th>
+          <th class="fooEditable" data-hide="phone">
+            Status
+          </th>
+		  <!--data-ft-buttons is used to create add and/or delete buttons for each record-->
+		  <th data-ft-buttons="Add,Delete" data-hide="phone, tablet"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--class="fooNewRecord" defines a blank row for new records at the end of the table-->
+        <tr class="fooNewRecord">
+          <td></td>
+	  <td>First</td>
+	  <td>Last</td>
+	  <td>Title</td>
+	  <td>DOB</td>
+	  <td>Active</td>
+        <tr>
+      </tbody>
+    </table>
+```
