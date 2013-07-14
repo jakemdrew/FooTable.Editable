@@ -14,6 +14,7 @@ Index
 
 * [How Does It Work?](#HowDoesItWork)
 * [Quick Start](#QuickStart)
+* [ftEditable API](#ftEditableAPI)
 
 
 <h2 id="HowDoesItWork">How Does It Work?</h2>
@@ -31,8 +32,11 @@ Index
 
 <h2 id="QuickStart">Quick Start</h2>
 
+<strong>The best place to get started is the demo's folder.  There are several html demo markups and a full ASP.net solution including a generic handler written in C#.</strong>
+
 1. Place a referece to footable.editable.js under footable.js. 
 2. Place a referece to footable.editable-1.0.css under footable-0.1.css.
+3. If no dataHandlerURL is provided, the plugin operates in demo mode and posts alerts showing all JSON that would be transported between the client and the server. 
 
 FooTables are defined just like always, but can include a few new FooTable.Editable classes and data attributes: 
 ```html
@@ -94,3 +98,8 @@ The FooTable.Editable plugin also includes a few new startup options:
 * <strong>serverTableName</strong> - The name of the server table you wish to update.
 * <strong>dataHandlerURL</strong> - The URL for the generic handler processing requests.
 * <strong>autoLoad</strong> - Sends a "Load" request to the server each time the footable is created.  The "Load" request fills up the table with data from the server. 
+
+<h2 id="#ftEditableAPI">ftEditable API</h2>
+
+
+
