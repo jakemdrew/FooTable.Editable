@@ -121,7 +121,18 @@ Using the ftEditable object, a "Load" request is sent to the sever.  If the requ
 
 This section is still under construction.  Additional details to follow!
 
-* <strong>processCommand(target, command)</strong>
+<strong>processCommand(target, command)</strong>
+
+<strong>target</strong> - The DOM element generating the command.  The target detemines what record / row in the table data has changed.
+
+<strong>command</strong> - Valid commands are "Load","Add","Update", and "Delete".  These commands determine what required data is packaged in the updateRecord and sent to the server. 
+
+<strong>The processCommand() function generates a command from the client that:</strong>
+
+1. creates a valid updateRecord that will be sent to the server.
+2. Calls the transportData() function sending the updateRecord to the server.
+3. Any server resposnse is also processed by processServerResponse() function indirectly called by transportData().
+
 * <strong>transportData(target, updateRecord)</strong>
 * <strong>processServerResponse(target, data, updateRecord)</strong>
 * <strong>updateRow(row, rowData)</strong>
