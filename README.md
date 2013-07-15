@@ -121,23 +121,39 @@ Using the ftEditable object, a "Load" request is sent to the sever.  If the requ
 
 This section is still under construction.  Additional details to follow!
 
-<strong>processCommand(target, command)</strong>
+<h3>processCommand(target, command)</h3>
 
-<strong>target</strong> - The DOM element generating the command.  The target detemines what record / row in the table data has changed.
+<strong>target</strong> - The DOM element generating the command.  The target detemines what record / row in the table data has changed.  The target also determines what record / row will be impacted by any server responses.
 
 <strong>command</strong> - Valid commands are "Load","Add","Update", and "Delete".  These commands determine what required data is packaged in the updateRecord and sent to the server. 
 
 <strong>The processCommand() function generates a command from the client that:</strong>
 
-1. creates a valid updateRecord that will be sent to the server.
+1. Creates a valid updateRecord that will be sent to the server.
 2. Calls the transportData() function sending the updateRecord to the server.
 3. Any server resposnse is also processed by processServerResponse() function indirectly called by transportData().
 
-* <strong>transportData(target, updateRecord)</strong>
-* <strong>processServerResponse(target, data, updateRecord)</strong>
-* <strong>updateRow(row, rowData)</strong>
-* <strong>deleteRow(row)</strong>
-* <strong>deleteAllRows(table)</strong>
-* <strong>checkNewEmptyRecord(table)</strong>
-* <strong>addRows(table, tableRows)</strong>
+<h3>transportData(target, updateRecord)</h3>
+
+<strong>target</strong> - The DOM element generating the command.  The target detemines what record / row in the table data has changed.  The target also determines what record / row will be impacted by any server responses.
+
+<strong>updateRecord</strong> - This is the valid JavaScript object containing the data transaction information that is transformed into a JSON string and then sent to the server via AJAX.  This object is typically created by the processCommand() function.
+
+<strong>The transportData() function:</strong>
+
+1.  Transforms the updateRecord into a JSON string.
+2.  Sends the updateRecord to the handler URL specified by dataHandlerURL.
+3.  Calls the processServerResponse() function to process the respsonse send by the server.
+
+<h3>processServerResponse(target, data, updateRecord)</h3>
+
+<h3>updateRow(row, rowData)</h3>
+
+<h3>deleteRow(row)</h3>
+
+<h3>deleteAllRows(table)</h3>
+
+<h3>checkNewEmptyRecord(table)</h3>
+
+<h3>addRows(table, tableRows)</h3>
 
