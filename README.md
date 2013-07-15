@@ -147,6 +147,56 @@ This section is still under construction.  Additional details to follow!
 
 <h3>processServerResponse(target, data, updateRecord)</h3>
 
+<strong>target</strong> - The DOM element targeted by the server response.  The target detemines what record / row in the table data has changed.  The target also determines what record / row will be impacted by any server responses.
+
+<strong>data</strong> - This is the response data sent by the server.
+
+1. data.response - must always contain a valid server response command ("Success", "Load", "Append", "Update", "Delete", "DeleteAll", or "Error")
+2. data.message - used to transmit specific messages, such as error message text, from the server.
+3. data.responseData - contains any fields and values that are needed for the transaction.
+
+<strong>updateRecord</strong> - This is original client updateRecord that generated the response.
+
+<strong>The processServerResponse() function:</strong>
+
+Uses a valid data.response command to process the server response.
+
+```javascript
+	//Handle processing AJAX server responses.
+        if (data.response == "Success") {
+            //Do nothing!
+        }
+        else if (data.response == "Load") {
+            deleteAllRows(table);
+            addRows(table, data.responseData);
+        }
+        else if (data.response == "Append") {
+            addRows(table, data.responseData);
+        }
+        else if (data.response == "Update") {
+            updateRow(curRow, data.responseData);
+        }
+        else if (data.response == "Delete") {
+            deleteRow(curRow);
+        }
+        else if (data.response == "DeleteAll") {
+            deleteAllRows(table);
+        }
+        else if (data.response == "Error") {
+            alert("The update was not successful\r\n" + data.message);
+
+            if (updateRecord.command == 'Update') {
+                //if a cell update fails, revert back to the previous value.
+                var updateIndex = $.data(w.footable, $(ft.table).attr('id') + '_colNames').indexOf(updateRecord.updatedFieldName);
+                $(target).closest('tr').find('td').eq(updateIndex)
+                    .text(updateRecord.updatedFieldOldValue);
+            }
+        }
+        else {
+            alert('Invalid server response! Response recieved: ' + data.response);
+        }
+```
+
 <h3>updateRow(row, rowData)</h3>
 
 <h3>deleteRow(row)</h3>
