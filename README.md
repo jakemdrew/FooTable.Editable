@@ -123,7 +123,7 @@ Using the ftEditable object, a "Load" request is sent to the sever.  If the requ
 
 Disclaimer!
 
-The ftEditable API is not needed for the normal function of FooTable.Editable.  The API is exposed for JavaScript ninjas who want to do things with FooTable.Editable that I may not have thought of yet.  Consider the API as a last resort before digging into the source and changing it.  You will also find that the documentation below is very helpful in understanding the source.  Good luck!  
+The ftEditable API is not needed for the normal function of FooTable.Editable.  The API is exposed for JavaScript ninjas who want to do things with FooTable.Editable that I may not have thought of yet.  Consider the API as a last resort before digging into the source and changing it.  You will also find that the documentation below is very helpful in understanding the source, since the API exposes most of the source functions.  Good luck!  
 
 <h3>processCommand(target, command)</h3>
 
