@@ -119,7 +119,11 @@ Using the ftEditable object, a "Load" request is sent to the sever.  If the requ
 
 <h2 id="#ftEditableAPIfunctions">ftEditable API Functions</h2>
 
-This section is still under construction.  Additional details to follow!
+<strong>This section is still under construction.  Additional details to follow!</strong>
+
+Disclaimer!
+
+The ftEditable API is not needed for the normal function of FooTable.Editable.  The API is exposed for JavaScript ninjas who want to do things with FooTable.Editable that I may not have thought of yet.  Consider the API as a last resort before digging into the source and changing it.  You will also find that the documentation below is very helpful in understanding the source.  Good luck!  
 
 <h3>processCommand(target, command)</h3>
 
@@ -187,7 +191,8 @@ Uses a valid data.response command to process the server response.
 
             if (updateRecord.command == 'Update') {
                 //if a cell update fails, revert back to the previous value.
-                var updateIndex = $.data(w.footable, $(ft.table).attr('id') + '_colNames').indexOf(updateRecord.updatedFieldName);
+                var updateIndex = $.data(w.footable
+                     , $(ft.table).attr('id') + '_colNames').indexOf(updateRecord.updatedFieldName);
                 $(target).closest('tr').find('td').eq(updateIndex)
                     .text(updateRecord.updatedFieldOldValue);
             }
