@@ -129,9 +129,8 @@ The ftEditable API is not needed for the normal function of FooTable.Editable.  
 
 <h3>processCommand(target, command)</h3>
 
-<strong>target</strong> - The DOM element generating the command.  The target detemines what record / row in the table data has changed.  The target also determines what record / row will be impacted by any server responses.
-
-<strong>command</strong> - Valid commands are "Load","Add","Update", and "Delete".  These commands determine what required data is packaged in the updateRecord and sent to the server. 
+* <strong>target</strong> - The DOM element generating the command.  The target detemines what record / row in the table data has changed.  The target also determines what record / row will be impacted by any server responses.
+* <strong>command</strong> - Valid commands are "Load","Add","Update", and "Delete".  These commands determine what required data is packaged in the updateRecord and sent to the server. 
 
 <strong>The processCommand() function generates a command from the client that:</strong>
 
@@ -141,9 +140,8 @@ The ftEditable API is not needed for the normal function of FooTable.Editable.  
 
 <h3>transportData(target, updateRecord)</h3>
 
-<strong>target</strong> - The DOM element generating the command.  The target detemines what record / row in the table data has changed.  The target also determines what record / row will be impacted by any server responses.
-
-<strong>updateRecord</strong> - This is the valid JavaScript object containing the data transaction information that is transformed into a JSON string and then sent to the server via AJAX.  This object is typically created by the processCommand() function.
+* <strong>target</strong> - The DOM element generating the command.  The target detemines what record / row in the table data has changed.  The target also determines what record / row will be impacted by any server responses.
+* <strong>updateRecord</strong> - This is the valid JavaScript object containing the data transaction information that is transformed into a JSON string and then sent to the server via AJAX.  This object is typically created by the processCommand() function.
 
 <strong>The transportData() function:</strong>
 
@@ -153,17 +151,15 @@ The ftEditable API is not needed for the normal function of FooTable.Editable.  
 
 <h3>processServerResponse(target, data, updateRecord)</h3>
 
-<strong>target</strong> - The DOM element targeted by the server response.  The target detemines what record / row in the table data has changed.  The target also determines what record / row will be impacted by any server responses.
-
-<strong>data</strong> - This is the response data sent by the server.
+* <strong>target</strong> - The DOM element targeted by the server response.  The target detemines what record / row in the table data has changed.  The target also determines what record / row will be impacted by any server responses.
+* <strong>data</strong> - This is the response data sent by the server.
 
 1. data.response - must always contain a valid server response command ("Success", "Load", "Append", "Update", "Delete", "DeleteAll", or "Error")
 2. data.message - used to transmit specific messages, such as error message text, from the server.
 3. data.responseData - contains any fields and values that are needed for the transaction.
 
-<strong>updateRecord</strong> - This is original client updateRecord that generated the response.
-
-<strong>The processServerResponse() function:</strong>
+* <strong>updateRecord</strong> - This is original client updateRecord that generated the response.
+* <strong>The processServerResponse() function:</strong>
 
 Uses a valid data.response command to process the server response.
 
@@ -206,9 +202,8 @@ Uses a valid data.response command to process the server response.
 
 <h3>updateRow(row, rowData)</h3>
 
-<strong>row</strong> - A reference to the row to be updated.
-
-<strong>rowData</strong> - Valid JavaScript object with valid field name properties and values.
+* <strong>row</strong> - A reference to the row to be updated.
+* <strong>rowData</strong> - Valid JavaScript object with valid field name properties and values.
 
 <strong>The updateRow() function:</strong>
 
@@ -217,34 +212,30 @@ Uses a valid data.response command to process the server response.
 
 <h3>deleteRow(row)</h3>
 
-<strong>row</strong> - A reference to the row to be deleted.
-
-<strong>The DeleteRow() function:</strong>
+* <strong>row</strong> - A reference to the row to be deleted.
+* <strong>The DeleteRow() function:</strong>
 
 1.  Deletes the row at the location provided in the row variable.
 
 <h3>deleteAllRows(table)</h3>
 
-<strong>table</strong> - A reference to the table containing the rows to be deleted.
-
-<strong>The deleteAllRows() function:</strong>
+* <strong>table</strong> - A reference to the table containing the rows to be deleted.
+* <strong>The deleteAllRows() function:</strong>
 
 1.  Deletes all rows in the table provided in the table variable.
 
 <h3>checkNewEmptyRecord(table)</h3>
 
-<strong>table</strong> - A reference to the table that should be checked for a new record row.
-
-<strong>The checkNewEmptyRecord() function:</strong>
+* <strong>table</strong> - A reference to the table that should be checked for a new record row.
+* <strong>The checkNewEmptyRecord() function:</strong>
 
 1.  Check a table for a new record row.  
 2.  Clones a new record row and adds it to the bottom of the table provided, if one does not exist.
 
 <h3>addRows(table, tableRows)</h3>
 
-<strong>table</strong> - A reference to the table that should be checked for a new record row.
-
-<strong>tableRows</strong> - A JavaScript Array of table records.
+* <strong>table</strong> - A reference to the table that should be checked for a new record row.
+* <strong>tableRows</strong> - A JavaScript Array of table records.
 
 <strong>The addRows() function:</strong>
 
