@@ -221,7 +221,7 @@ Uses a valid data.response command to process the server response.
 
 <strong>The DeleteRow() function:</strong>
 
-Deletes the row at the location provided in the row variable.
+1.  Deletes the row at the location provided in the row variable.
 
 <h3>deleteAllRows(table)</h3>
 
@@ -229,7 +229,7 @@ Deletes the row at the location provided in the row variable.
 
 <strong>The deleteAllRows() function:</strong>
 
-Deletes all rows in the table provided in the table variable.
+1.  Deletes all rows in the table provided in the table variable.
 
 <h3>checkNewEmptyRecord(table)</h3>
 
