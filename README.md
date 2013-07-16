@@ -102,6 +102,10 @@ The FooTable.Editable plugin also includes a few new startup options:
 
 <h2 id="#ftEditableAPI">ftEditable API</h2>
 
+<strong>Disclaimer!</strong>
+
+The ftEditable API is not needed for the normal function of FooTable.Editable.  The API is exposed for JavaScript ninjas who want to do things with FooTable.Editable that I may not have thought of yet.  Consider the API as a last resort before digging into the source and changing it.  You will also find that the documentation below is very helpful in understanding the source, since the API exposes most of the source functions.  Good luck!  
+
 The ftEditable API can be used for more advanced FooTable.Editable transactions and table manipulations.  All API functions can be accessed through the jQuery ftEditable function which returns the ftEditable object.  The following example demonstrates using the ftEditable function to delete all rows from a footable and add any new rows contained in a javascript Array of dataRecords.  
 
 ```javascript
@@ -119,9 +123,7 @@ Using the ftEditable object, a "Load" request is sent to the sever.  If the requ
 
 <h2 id="#ftEditableAPIfunctions">ftEditable API Functions</h2>
 
-<strong>This section is still under construction.  Additional details to follow!</strong>
-
-Disclaimer!
+<strong>Disclaimer!</strong>
 
 The ftEditable API is not needed for the normal function of FooTable.Editable.  The API is exposed for JavaScript ninjas who want to do things with FooTable.Editable that I may not have thought of yet.  Consider the API as a last resort before digging into the source and changing it.  You will also find that the documentation below is very helpful in understanding the source, since the API exposes most of the source functions.  Good luck!  
 
