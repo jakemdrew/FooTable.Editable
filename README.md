@@ -246,4 +246,5 @@ Deletes all rows in the table provided in the table variable.
 
 <strong>The addRows() function:</strong>
 
-1. Converts a JavaScript Array of table rows into a valid set of <tr> tags and adds them to the table provided.
+1. Converts a JavaScript Array of table rows into a valid set of tr tags and adds them to the table provided.
+2. Checks for any required fooButtons and adds them to each row. 
