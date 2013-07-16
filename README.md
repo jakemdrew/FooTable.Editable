@@ -204,11 +204,46 @@ Uses a valid data.response command to process the server response.
 
 <h3>updateRow(row, rowData)</h3>
 
+<strong>row</strong> - A reference to the row to be updated.
+
+<strong>rowData</strong> - Valid JavaScript object with valid field name properties and values.
+
+<strong>The updateRow() function:</strong>
+
+1.  Locates the row to be updated.
+2.  Updates every field in the row that is contained within the rowData object to the value contained within the rowData object. 
+
 <h3>deleteRow(row)</h3>
+
+<strong>row</strong> - A reference to the row to be deleted.
+
+<strong>The DeleteRow() function:</strong>
+
+Deletes the row at the location provided in the row variable.
 
 <h3>deleteAllRows(table)</h3>
 
+<strong>table</strong> - A reference to the table containing the rows to be deleted.
+
+<strong>The deleteAllRows() function:</strong>
+
+Deletes all rows in the table provided in the table variable.
+
 <h3>checkNewEmptyRecord(table)</h3>
+
+<strong>table</strong> - A reference to the table that should be checked for a new record row.
+
+<strong>The checkNewEmptyRecord() function:</strong>
+
+1.  Check a table for a new record row.  
+2.  Clones a new record row and adds it to the bottom of the table provided, if one does not exist.
 
 <h3>addRows(table, tableRows)</h3>
 
+<strong>table</strong> - A reference to the table that should be checked for a new record row.
+
+<strong>tableRows</strong> - A JavaScript Array of table records.
+
+<strong>The addRows() function:</strong>
+
+1. Converts a JavaScript Array of table rows into a valid set of <tr> tags and adds them to the table provided.
