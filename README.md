@@ -156,12 +156,13 @@ The ftEditable API is not needed for the normal function of FooTable.Editable.  
 * <strong>target</strong> - The DOM element targeted by the server response.  The target detemines what record / row in the table data has changed.  The target also determines what record / row will be impacted by any server responses.
 * <strong>data</strong> - This is the response data sent by the server.
 
-1. data.response - must always contain a valid server response command ("Success", "Load", "Append", "Update", "Delete", "DeleteAll", or "Error")
-2. data.message - used to transmit specific messages, such as error message text, from the server.
-3. data.responseData - contains any fields and values that are needed for the transaction.
+** data.response - must always contain a valid server response command ("Success", "Load", "Append", "Update", "Delete", "DeleteAll", or "Error")
+** data.message - used to transmit specific messages, such as error message text, from the server.
+** data.responseData - contains any fields and values that are needed for the transaction.
 
 * <strong>updateRecord</strong> - This is original client updateRecord that generated the response.
-* <strong>The processServerResponse() function:</strong>
+
+<strong>The processServerResponse() function:</strong>
 
 Uses a valid data.response command to process the server response.
 
