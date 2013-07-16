@@ -131,7 +131,7 @@ The ftEditable API is not needed for the normal function of FooTable.Editable.  
 
 <h3>processCommand(target, command)</h3>
 
-* <strong>target</strong> - The DOM element generating the command.  The target detemines what record / row in the table data has changed.  The target also determines what record / row will be impacted by any server responses.
+* <strong>target</strong> - The DOM element generating the command.  The target detemines what record / row / cell / button in the table data has triggered the command.  The target also determines what record / row will be impacted by any server responses.
 * <strong>command</strong> - Valid commands are "Load","Add","Update", and "Delete".  These commands determine what required data is packaged in the updateRecord and sent to the server. 
 
 <strong>The processCommand() function generates a command from the client that:</strong>
