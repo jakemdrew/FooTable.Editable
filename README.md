@@ -96,7 +96,7 @@ The FooTable.Editable plugin also includes a few new startup options:
     });                                                 
 ```
 
-<h3>ftEditable Startup Options</h3>
+<strong>ftEditable Startup Options</strong>
 
 * <strong>serverTableName</strong> - The name of the server table you wish to update.
 * <strong>dataHandlerURL</strong> - The URL for the generic handler processing requests.
