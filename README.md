@@ -96,6 +96,8 @@ The FooTable.Editable plugin also includes a few new startup options:
     });                                                 
 ```
 
+<h3>ftEditable Startup Options</ht>
+
 * <strong>serverTableName</strong> - The name of the server table you wish to update.
 * <strong>dataHandlerURL</strong> - The URL for the generic handler processing requests.
 * <strong>autoLoad</strong> - Sends a "Load" request to the server each time the footable is created.  The "Load" request fills up the table with data from the server. 
