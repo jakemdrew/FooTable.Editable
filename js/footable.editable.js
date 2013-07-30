@@ -567,7 +567,11 @@
 
                     //if a footable cell value changes, create an update object to send to the server.
                     $(ft.table).bind('td-cell-changed', function (e) {
-                        processCommand(e.target, 'Update');
+                        var buttons = getButtonIndexes(this);
+						//Do not process update on data-ft-buttons columns
+                        if (buttons.buttonCols.indexOf($(e.target).index()) < 0) {
+                            processCommand(e.target, 'Update');
+                        }
                     });
 
                     //must use on() function since input tags are dynamically created.
