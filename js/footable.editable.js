@@ -115,11 +115,13 @@
             buttonIndexes = {};
             buttonIndexes.addCols = new Array();
             buttonIndexes.deleteCols = new Array();
+            buttonIndexes.buttonCols = new Array();
             buttonIndexes.buttonColCt = 0;
 
             $(table).find('th').each(function (index) {
                 var buttons = $(this).attr('data-ft-buttons');
                 if (buttons != undefined) {
+                    buttonIndexes.buttonCols.push(index);
                     if (buttons.indexOf('Add') >= 0) {
                         buttonIndexes.addCols.push(index);
                     }
