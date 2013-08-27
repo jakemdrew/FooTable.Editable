@@ -21,7 +21,7 @@ Index
 <h2 id="HowDoesItWork">How Does It Work?</h2>
 
 * FooTable.Editable is a Footable extensible plugin that makes all of your Footables editable. Simply add the "fooEditable" class to any th tag, and that column suddenly becomes editable.
-* The plugin also transports FooTable data and changes via AJAX between the client and server in JSON format which should be suitable for just about scnerio.
+* The plugin also transports FooTable data and changes via AJAX between the client and server in JSON format which should be suitable for just about any scnerio.
 * All JSON updates are sent to the server via a dataHandlerURL: provided by the user.
 * The dataHandlerURL can also respond back to the client with "Success", "Error", "Load", or "Update" including any JSON data or messages for the client.
 * A special fooId class can be added to any th tag to ensure that Primary and Composite key fields are sent to the server with every transaction.  These fooId fields can also be hidden using other standard footable data attributes.
