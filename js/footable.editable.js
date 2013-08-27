@@ -232,9 +232,9 @@
 			
             if (command == 'Add' || fieldIsIdCol) {
                 //input vals are always populated in corresponding td.
-                if (fieldIsControl === undefined) updateRecord[fieldName] = $(this).text();
+                if (fieldIsControl === undefined) updateRecord[fieldName] = $(this).text().trim();
                 else {
-                    var ctlVal = $(this).find('input').val();
+                    var ctlVal = $(this).find('input').val().trim();
                     if (ctlVal != "true") ctlVal = "false";
                     updateRecord[fieldName] = ctlVal;
                 }
